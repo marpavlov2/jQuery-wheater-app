@@ -1,0 +1,44 @@
+<html>
+	<head>
+	<meta charset=utf-8>
+	<title> jQery Events</title>
+	<link rel="stylesheet" href="style.css">
+	
+	</head>
+
+	<body>
+
+		<article> 
+			<h1> My awesome post </h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo gravida luctus. Etiam arcu orci, bibendum sagittis commodo eu, placerat et purus. Integer eu faucibus magna, sit amet gravida dui.</p>
+			<p> <span class="co"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span> Proin commodo gravida luctus. Etiam arcu orci, bibendum sagittis commodo eu, placerat et purus. Integer eu faucibus magna, sit amet gravida dui.</p>
+		</article>
+
+	
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+
+	(function($) {
+	
+	var co = $('span.co').each(function() {
+		var $this = $(this);
+			$('<blockquote></blockquote>', {
+				class: 'co',
+				text: $this.text()
+			}).prependTo( $this.closest('p'));
+	})
+	
+				
+	
+
+})(jQuery);
+				
+	</script>
+
+	</body>
+<html>
+
+

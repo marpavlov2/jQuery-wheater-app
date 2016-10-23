@@ -1,0 +1,104 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize (customized) */
+* {margin: 0;padding: 0; border: 0; outline: none; -webkit-tap-highlight-color: transparent; box-sizing:border-box; }
+html {font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display: block; }
+audio, canvas, progress, video {display: inline-block; /* 1 */ vertical-align: baseline; /* 2 */ }
+audio:not([controls]) {display: none; height: 0; }
+[hidden],template {display: none;}
+a {background-color: transparent;}
+a:active,a:hover { outline: 0; -webkit-tap-highlight-color: transparent; }
+abbr[title] {border-bottom: 1px dotted;}
+b,strong {font-weight: bold;}
+dfn {font-style: italic;}
+mark {background: #ff0; color: #000; }
+small {font-size: 80%;}
+sub,sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+svg:not(:root) {overflow: hidden;}
+hr { box-sizing: border-box; height: 0;border-bottom: 1px solid #ccc;margin-bottom: 10px;border-top-style: none;border-right-style: none;border-left-style: none; }
+pre {overflow: auto;}
+code,kbd,pre,samp {font-family: monospace, monospace;font-size: 1em;}
+button,input,optgroup,select,textarea {color: inherit; /* 1 */font: inherit; /* 2 */margin: 0; /* 3 */}
+button {overflow: visible;}
+button,select {text-transform: none;}
+button,html input[type="button"],input[type="reset"],input[type="submit"] {-webkit-appearance: button; /* 2 */cursor: pointer; /* 3 */}
+button[disabled],html input[disabled] {cursor: default;}
+button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0;}
+input {line-height: normal;}
+input[type="checkbox"],input[type="radio"] {box-sizing: border-box; /* 1 */padding: 0; /* 2 */}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height: auto;}
+input[type="search"] {-webkit-appearance: textfield; /* 1 */box-sizing: border-box;}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+input[type=text], input[type=email], input[type=password], input[type=tel] { -webkit-appearance: none; border-radius: 0; box-shadow: none; }
+fieldset { margin:0 0 15px 0; padding: 15px; }
+textarea {overflow: auto;}
+optgroup {font-weight: bold;}
+table {border-collapse: collapse; border-spacing: 0;}
+/*------- /normalize -------*/
+
+
+/*------- mixins -------*/
+.gradient(@startColor: #eee, @endColor: white) {
+	background: @startColor;
+	background-image: linear-gradient(top, @startColor 0%, @endColor 100%);
+	background-image: -webkit-linear-gradient(top, @startColor 0%, @endColor 100%);
+	background-image: -moz-linear-gradient(@startColor 0%, @endColor 100%);
+	background-image: -ms-linear-gradient(top, @startColor 0%, @endColor 100%);
+}
+.pseudo(@width, @height) {
+	content:"";
+	position: absolute;
+	display: block;
+	width:@width;
+	height:@height;
+}
+.transition (@element: color, @speed: .3s) {
+	transition: @arguments;
+}
+/*------- /mixins -------*/
+
+
+/*------- site vars -------*/
+@pageWidth: 990px;
+@fontSize: 15px;
+@lineHeight: 22px;
+@textColor: #333;
+@linkColor: #333;
+@linkHoverColor: #000;
+@font: Arial, Helvetica, sans-serif;
+/*------- /site vars -------*/
+
+
+/*------- selectors -------*/
+html, body { width:100%; min-height:100%; }
+body { .gradient(#4F598F,#7F80BB); color: @textColor; font: @fontSize / @lineHeight @font; }
+a {
+	color: @linkColor;text-decoration: underline;
+	&:hover { text-decoration: underline;color: @linkHoverColor; }
+}
+ul, ol { margin: 0px 0px 10px 10px; }
+h1, h2, h3, h4 { 
+	font-weight: bold; padding-bottom: 15px; 
+	a, a:hover { text-decoration:none; }
+}
+h1 { font-size: 30px; line-height: 26px; text-align: center; padding:100px 0 20px; color:#fff; text-shadow: 1px 1px 0px rgba(0,0,0,.2); }
+h2 { font-size:20px; line-height: 23px; }
+h3 { font-size:17px; line-height: 18px; }
+h4 { font-size:16px; line-height:21px; }
+p { padding-bottom: 10px; }
+/*------- /selectors -------*/
+
+
+.wrapper { width:@pageWidth; margin:auto; top: 50px; border-radius: 3px; text-align: center; }
+.current { color: #fff; text-shadow: 1px 1px 0px rgba(0,0,0,.2); margin-bottom: 20px; }
+
+
+/*------- weather item -------*/
+.weather-item { 
+	display: inline-block; margin:5px; border-radius: 2px; background:#fff; width:180px; height: 180px; vertical-align: top; text-align: center; font-size:14px; line-height:20px; padding: 15px;border: 1px solid #fff; box-shadow: inset 0px 0px 150px rgba(158,215,241,.5);
+	span { display: block; }
+}
+.weather-title { font-weight: bold; text-transform: uppercase; }
+.weather-date { font-weight: bold; padding: 10px 0 0 0; }
+/*------- /weather item -------*/
